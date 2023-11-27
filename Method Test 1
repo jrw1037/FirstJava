@@ -1,0 +1,22 @@
+package Method_Testing;
+
+//import Method_Testing.Test_method;
+
+public class test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Test_method a = new Test_method();
+		
+		System.out.println(a.multiply_fun(10, 20));
+		
+		test1 t = new test1();
+		
+		t.sum_f(0, 0, 0);
+	}
+
+	public int sum_f(int a, int b, int c) {
+		return a+b+c;
+	}
+}
