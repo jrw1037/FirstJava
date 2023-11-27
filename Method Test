@@ -1,0 +1,27 @@
+package Method_Testing;
+
+public class Test_method {
+
+	//public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		public int sum_fun(int a, int b) {
+			
+			return a+b;
+			
+		}
+		public int subtract_fun(int a, int b) {
+			
+			return a-b;
+		}	
+		
+		public int divide_fun(int a, int b) {
+			return a/b;
+			
+		}
+		public int multiply_fun(int a, int b) {
+			return a*b;
+		}
+}
+
+//}
