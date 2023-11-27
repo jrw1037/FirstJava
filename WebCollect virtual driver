@@ -1,0 +1,21 @@
+package webcollect;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class virtual_driver {
+
+	WebDriver driver;
+	
+	string name = "webdriver.gecko.driver";
+	string path = "C:\\Users\\jrwal\\Downloads/geckodriver.exe";
+	string url;
+	
+	public void firefox(string input_url) {
+		System.setProperties(name, path);
+		
+		driver = new FirefoxDriver();
+		
+		url = input_url;
+	}
+}
