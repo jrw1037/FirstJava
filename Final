@@ -1,0 +1,186 @@
+package BudgetManager;
+
+//public class Project {
+
+	import java.util.Scanner;
+
+
+	public class Project {
+
+	    private static String username = null;
+
+	    private static String password = null;
+
+	    private static double balance = 0;
+
+
+	    public static void main(String[] args) {
+
+	        Scanner scanner = new Scanner(System.in);
+
+
+	        while (true) {
+
+	            System.out.println("Personal Budget Manager");
+
+
+	            if (username == null) {
+
+	                //user is not logged in
+
+	                System.out.println("1. Sign up");
+
+	                System.out.println("2. Log in");
+
+	            } else {
+
+	                //user is logged in
+
+	                System.out.println("Welcome, " + username);
+
+	                System.out.println("3. Add Income");
+
+	                System.out.println("4. Add Expense");
+
+	                System.out.println("5. Logout");
+
+	            }
+
+
+	            int choice = scanner.nextInt();
+
+
+	            if (username == null) {
+
+	                //user is not logged in
+
+	                if (choice == 1) {
+
+	                    signUp(scanner); //call the signup function
+
+	                } else if (choice == 2) {
+
+	                    logIn(scanner); //call the login function
+
+	                }
+
+	            } else {
+
+	                //user is logged in
+
+	                if (choice == 3) {
+
+	                    addIncome(scanner); //call the addIncome function
+
+	                } else if (choice == 4) {
+
+	                    addExpense(scanner); //call the addExpense function
+
+	                } else if (choice == 5) {
+
+	                    System.out.println("bye, " + username);
+
+	      
+
+	                }
+
+	            }
+
+	        }
+
+	    }
+
+
+	    //handles user signup
+
+	    public static void signUp(Scanner scanner) {
+
+	        System.out.println("Enter your username:");
+
+	        username = scanner.next();
+
+	        System.out.println("Create a password:");
+
+	        password = scanner.next(); //set the userss password
+
+	        System.out.println("Enter your initial balance: $");
+
+	        balance = scanner.nextDouble(); //set users initial balance
+
+	    }
+
+
+	    //handles user login
+
+	    public static void logIn(Scanner scanner) {
+
+	        System.out.println("Enter your username:");
+
+	        String loginUsername = scanner.next();
+
+	        System.out.println("Enter your password:");
+
+	        String loginPassword = scanner.next();
+
+	        if (loginUsername.equals(username) && loginPassword.equals(password)) {
+
+	            System.out.println("logged in as " + username);
+
+	        } else {
+
+	            System.out.println("Invalid username or password. Please sign up or try again.");
+
+	        }
+
+	    }
+
+
+	    //handles adding income
+
+	    public static void addIncome(Scanner scanner) {
+
+	        System.out.print("Enter income amount: $");
+
+	        double incomeAmount = scanner.nextDouble();
+
+	        System.out.print("Enter income description: ");
+
+	        String incomeDescription = scanner.next();
+
+	        balance += incomeAmount; //add income to the balance
+
+	        System.out.println("Income added: $" + incomeAmount);
+
+	    }
+
+
+	    //handles adding expenses
+
+	    public static void addExpense(Scanner scanner) {
+
+	        System.out.print("Enter expense amount: $");
+
+	        double expenseAmount = scanner.nextDouble();
+
+	        System.out.print("Enter expense description: ");
+
+	        String expenseDescription = scanner.next();
+
+	        if (balance >= expenseAmount) {
+
+	            balance -= expenseAmount; //deduct expense from the balance
+
+	            System.out.println("Expense added: $" + expenseAmount);
+
+	        } else {
+
+	            System.out.println("insuffficient funds for the expense.");
+
+	        }
+
+	    }
+
+	}
+
+
+}
