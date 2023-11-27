@@ -1,0 +1,24 @@
+package webcollect;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+
+		File file = new File("C:\\Users\\jrwal\\Desktop/test.csv");
+		
+		FileWriter outputfile = new FileWriter(file);
+		CSVWriter writer = new CSVWriter(outputfile);
+		
+		virtual_driver col = new virtual_driver();
+		
+		col.firefox("https://www.google.com/");
+		
+		col.driver.get(col.url);
+	}
+
+}
